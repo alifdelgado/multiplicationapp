@@ -23,6 +23,7 @@ export class SaveFile implements SaveFileUseCase {
       fs.mkdirSync(fileDestination, {
         recursive: true,
       });
+
       fs.writeFileSync(
         path.join(
           fileDestination,
@@ -32,7 +33,6 @@ export class SaveFile implements SaveFileUseCase {
       );
       return true;
     } catch (error) {
-      console.log(error);
       return false;
     }
   }
